@@ -10,10 +10,9 @@ using System.Xml.Linq;
 
 namespace EX01_Pokemon.ViewModel
 {
-    internal class DetailPageVM: ObservableObject
+    internal class DetailPageVM : ObservableObject
     {
-        public Pokemon CurrentPokemon { get; set; }
-        = new Pokemon() 
+        private Pokemon _currentPokemon = new Pokemon()
         {
             Id = 136,
             Name = "Flareon",
@@ -21,5 +20,14 @@ namespace EX01_Pokemon.ViewModel
             Height = 136,
             Weight = 9
         };
+
+        public Pokemon CurrentPokemon
+        {
+            get => _currentPokemon;
+            set
+            {
+                _currentPokemon = value; OnPropertyChanged(nameof(CurrentPokemon));
+            }
+        }
     }
 }

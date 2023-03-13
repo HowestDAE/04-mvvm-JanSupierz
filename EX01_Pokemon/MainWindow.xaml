@@ -4,8 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EX01_Pokemon"
-        xmlns:view="clr-namespace:EX01_Pokemon.View"
+        xmlns:viewModel="clr-namespace:EX01_Pokemon.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#333">
-    <view:DetailPage/>
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Frame NavigationUIVisibility="Hidden" Content="{Binding CurrentPage}"/>
+        <Button VerticalAlignment="Bottom"
+                Command="{Binding SwitchPageCommand}"
+                Content="{Binding CommandText}"/>
+    </Grid>
 </Window>
