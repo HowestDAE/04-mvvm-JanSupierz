@@ -87,6 +87,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\DetailPageVM.cs" />
+    <Compile Include="View\Converters\TypeToImageConverter.cs" />
+    <Compile Include="View\Converters\UrlToImageConverter.cs" />
     <Compile Include="View\DetailPage.xaml.cs">
       <DependentUpon>DetailPage.xaml</DependentUpon>
     </Compile>
